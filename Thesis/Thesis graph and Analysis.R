@@ -1,3 +1,4 @@
+#importing data from CSV file)
 library(ggplot2)
 data<- read.csv('Farhan_graph_table.csv')
 
@@ -5,7 +6,8 @@ data$Time.limit<- factor(data$Time.limit)
 data$Situation<- factor(data$Situation,level=c('Before','After'))
 
 
-#png('capture1.png',width=1000,height=800,res=140)
+#Analysing Data through Boxplot
+#Three different time period boxplot (30, 45, 60 minutes)
 ggplot(data=data)+
   geom_boxplot(aes(x=Time.limit,y=Accessibility.Index,
                    color=Situation))+
@@ -21,7 +23,7 @@ ggplot(data=data)+
   )
 
 
-#T-test
+#T-test (for 3 different time period)
 time<- c(30, 45, 60) 
 for (item in time){
   x<- data$Accessibility.Index[data$Situation=='Before'& data$Time.limit== item] 
