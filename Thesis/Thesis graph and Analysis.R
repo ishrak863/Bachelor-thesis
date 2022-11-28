@@ -14,7 +14,6 @@ ggplot(data=data)+
   ggtitle('Accessibility Index before and after the introduction of Circular Bus')+
   xlab('Time limit (minutes)')+
   ylab('Accessiblity Index')+
-  #scale_y_continuous(breaks = a)+
   theme(
     axis.title.x = element_text(size = 14),
     axis.title.y = element_text(size = 14),
